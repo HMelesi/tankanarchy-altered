@@ -19,6 +19,7 @@
   "homepage": "https://github.com/penumbragames/tankanarchy#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "heroku": "^7.39.1",
     "jquery": "^3.4.0",
     "morgan": "^1.9.1",
     "popper.js": "^1.14.7",
@@ -31,6 +32,6 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mini-css-extract-plugin": "^0.5.0",
-    "webpack": "^4.29.6"
+    "webpack": "^4.42.1"
   }
 }
