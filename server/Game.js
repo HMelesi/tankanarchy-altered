@@ -3,7 +3,7 @@
  * and entities.
  */
 
-const Bullet = require("./Biscuit");
+const Biscuit = require("./Biscuit");
 const Player = require("./Player");
 const Powerup = require("./Powerup");
 
@@ -134,12 +134,12 @@ class Game {
           continue;
         }
 
-        // Player-Bullet collision interaction
-        if (e1 instanceof Bullet && e2 instanceof Player) {
+        // Player-Biscuit collision interaction
+        if (e1 instanceof Biscuit && e2 instanceof Player) {
           e1 = entities[j];
           e2 = entities[i];
         }
-        if (e1 instanceof Player && e2 instanceof Bullet && e2.source !== e1) {
+        if (e1 instanceof Player && e2 instanceof Biscuit && e2.source !== e1) {
           e1.damage(e2.damage);
           if (e1.isDead()) {
             e1.spawn();
@@ -159,20 +159,20 @@ class Game {
           e2.destroyed = true;
         }
 
-        // Bullet-Bullet interaction
+        // Biscuit-Biscuit interaction
         if (
-          e1 instanceof Bullet &&
-          e2 instanceof Bullet &&
+          e1 instanceof Biscuit &&
+          e2 instanceof Biscuit &&
           e1.source !== e2.source
         ) {
           e1.destroyed = true;
           e2.destroyed = true;
         }
 
-        // Bullet-Powerup interaction
+        // Biscuit-Powerup interaction
         if (
-          (e1 instanceof Powerup && e2 instanceof Bullet) ||
-          (e1 instanceof Bullet && e2 instanceof Powerup)
+          (e1 instanceof Powerup && e2 instanceof Biscuit) ||
+          (e1 instanceof Biscuit && e2 instanceof Powerup)
         ) {
           e1.destroyed = true;
           e2.destroyed = true;
