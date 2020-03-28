@@ -136,14 +136,22 @@ class Drawing {
    * Draws a biscuit (tank shell) to the canvas.
    * @param {Biscuit} biscuit The biscuit to draw to the canvas
    */
+
   drawBiscuit(biscuit) {
     this.context.save();
     const canvasCoords = this.viewport.toCanvas(biscuit.position);
     this.context.translate(canvasCoords.x, canvasCoords.y);
     this.context.rotate(Drawing.translateAngle(biscuit.angle));
-    this.drawCenteredImage(
-      this.images[Constants[DRAWING_IMG_BISCUIT[Math.floor(Math.random() * 5)]]]
-    );
+    const biscuits = [
+      DRAWING_IMG_CHOCCHIP,
+      DRAWING_IMG_JAMMYDODGE,
+      DRAWING_IMG_CUSTARDCREAM,
+      DRAWING_IMG_HOBNOB,
+      DRAWING_IMG_PARTYRING,
+      DRAWING_IMG_BOURBON
+    ];
+    const chosenBiscuit = biscuits[Math.floor(Math.random() * 6)];
+    this.drawCenteredImage(this.images[Constants[chosenBiscuit]]);
     this.context.restore();
   }
 
