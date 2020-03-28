@@ -141,7 +141,13 @@ class Drawing {
     const canvasCoords = this.viewport.toCanvas(biscuit.position);
     this.context.translate(canvasCoords.x, canvasCoords.y);
     this.context.rotate(Drawing.translateAngle(biscuit.angle));
-    this.drawCenteredImage(this.images[Constants.DRAWING_IMG_BISCUIT]);
+    this.drawCenteredImage(
+      this.images[
+        Constants.DRAWING_IMG_BISCUIT[
+          Math.floor(Math.random() * biscuitArray.length)
+        ]
+      ]
+    );
     this.context.restore();
   }
 
