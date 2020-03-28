@@ -102,9 +102,18 @@ class Drawing {
     this.drawCenteredImage(
       this.images[
         // eslint-disable-next-line multiline-ternary
-        isSelf
-          ? Constants.DRAWING_IMG_SELF_TANK
-          : Constants.DRAWING_IMG_OTHER_TANK
+
+        player.name === "chocolate chip"
+          ? Constants.DRAWING_IMG_CHIP_BODY
+          : player.name === "frangipane"
+          ? Constants.DRAWING_IMG_FRAN_BODY
+          : player.name === "ginger nut"
+          ? Constants.DRAWING_IMG_ROS_BODY
+          : Constants.DRAWING_IMG_LIZZ_BODY
+
+        // isSelf
+        //   ? Constants.DRAWING_IMG_SELF_TANK
+        //   : Constants.DRAWING_IMG_OTHER_TANK
       ]
     );
     this.context.rotate(-Drawing.translateAngle(player.tankAngle));
