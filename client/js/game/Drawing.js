@@ -142,7 +142,7 @@ class Drawing {
     this.context.translate(canvasCoords.x, canvasCoords.y);
     this.context.rotate(Drawing.translateAngle(biscuit.angle));
     this.drawCenteredImage(
-      this.images[Constants.DRAWING_IMG_BISCUIT[Math.floor(Math.random() * 6)]]
+      this.images[Constants[DRAWING_IMG_BISCUIT[Math.floor(Math.random() * 5)]]]
     );
     this.context.restore();
   }
