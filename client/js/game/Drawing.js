@@ -81,6 +81,7 @@ class Drawing {
    */
   drawTank(isSelf, player) {
     this.context.save();
+
     const canvasCoords = this.viewport.toCanvas(player.position);
     this.context.translate(canvasCoords.x, canvasCoords.y);
 
@@ -102,7 +103,6 @@ class Drawing {
     this.drawCenteredImage(
       this.images[
         // eslint-disable-next-line multiline-ternary
-
         player.name === "chocolate chip"
           ? Constants.DRAWING_IMG_CHIP_BODY
           : player.name === "frangipane"
@@ -110,10 +110,6 @@ class Drawing {
           : player.name === "ginger nut"
           ? Constants.DRAWING_IMG_ROS_BODY
           : Constants.DRAWING_IMG_LIZZ_BODY
-
-        // isSelf
-        //   ? Constants.DRAWING_IMG_SELF_TANK
-        //   : Constants.DRAWING_IMG_OTHER_TANK
       ]
     );
     this.context.rotate(-Drawing.translateAngle(player.tankAngle));
