@@ -150,7 +150,7 @@ class Drawing {
       DRAWING_IMG_PARTYRING,
       DRAWING_IMG_BOURBON
     ];
-    const chosenBiscuit = biscuits[Math.floor(Math.random() * 6)];
+    const chosenBiscuit = biscuits[Math.floor(Math.random() * biscuits.length)];
     this.drawCenteredImage(this.images[Constants[chosenBiscuit]]);
     this.context.restore();
   }
