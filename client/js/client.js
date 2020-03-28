@@ -24,7 +24,7 @@ $(document).ready(() => {
    * @return {false}
    */
   const sendName = () => {
-    const name = $("#name-input").val();
+    const name = $("#name-input[name=name-input]:checked").val();
     if (name && name.length < 20) {
       $("#name-prompt-container").empty();
       $("#name-prompt-container").append(
